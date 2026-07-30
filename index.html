@@ -38,7 +38,9 @@
 "jobTitle":"AI Solutions Architect",
 "alumniOf":{"@type":"CollegeOrUniversity","name":"RMIT University"},
 "knowsAbout":["Artificial Intelligence","Machine Learning","Kubernetes","MLOps","Cloud Infrastructure"],
-"sameAs":["https://www.linkedin.com/in/pushkar-awate/","https://github.com/pushkar-awate"]
+"sameAs":["https://www.linkedin.com/in/pushkar-awate/","https://github.com/pushkar-awate"],
+"email":"pushkar.awate@gmail.com",
+"address":{"@type":"PostalAddress","addressLocality":"Melbourne","addressRegion":"VIC","addressCountry":"AU"}
 }
 </script>
 
@@ -271,7 +273,7 @@ transition:box-shadow .2s ease;
 .tl-list li{margin-bottom:9px;}
 
 /* PROJECTS */
-#projects{background:var(--bg-alt);}
+#experience{background:var(--bg-alt);}
 .proj-grid{display:flex;flex-direction:column;gap:22px;}
 .case-card{
 background:#fff;
@@ -423,9 +425,16 @@ padding:8px 28px 18px;
 section{padding:64px 0;}
 .nav-cta{padding:8px 14px;font-size:12.5px;}
 }
+
+/* ACCESSIBILITY */
+.skip-link{position:absolute;left:-9999px;top:0;z-index:100;background:var(--accent);color:#04201c;padding:10px 16px;border-radius:0 0 8px 0;font-weight:700;font-size:14px;text-decoration:none;}
+.skip-link:focus{left:0;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+a:focus-visible,button:focus-visible,.btn:focus-visible,.navlinks a:focus-visible,.contact-tile:focus-visible,.nav-cta:focus-visible,.nav-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px;}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <nav>
 <div class="wrap">
@@ -433,10 +442,10 @@ section{padding:64px 0;}
 <div class="nav-right">
 <ul class="navlinks" id="navlinks">
 <li><a href="#about">About</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#experience">Experience</a></li>
 <li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
 <li><a href="#skills">Skills</a></li>
+<li><a href="#education">Education</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 <a class="nav-cta" href="#contact">Contact Me</a>
@@ -446,6 +455,7 @@ section{padding:64px 0;}
 </div>
 </div>
 </nav>
+<main id="main">
 
 <header class="hero" id="top">
 <div class="wrap">
@@ -455,6 +465,7 @@ section{padding:64px 0;}
 <div class="btn-row">
 <a class="btn btn-primary" href="#contact">Get in touch</a>
 <a class="btn btn-ghost" href="#projects">View projects</a>
+<a class="btn btn-ghost" href="assets/Pushkar_Awate_Resume.pdf" download aria-label="Download résumé (PDF)">Download Résumé &#8595;</a>
 </div>
 
 <div class="stat-strip">
@@ -491,7 +502,7 @@ section{padding:64px 0;}
 </div>
 <div class="reveal">
 <div class="about-photo">
-<img src="assets/portfolio-photo.jpg" alt="Pushkar Awate" width="1100" height="1407" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;">
+<img src="assets/portfolio-photo.jpg" alt="Pushkar Awate, AI/ML Engineer" width="1100" height="1407" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;">
 </div>
 <div class="fact-card">
 <h3>Quick facts</h3>
@@ -500,8 +511,204 @@ section{padding:64px 0;}
 <li><span>Prior degree</span><span>B.IT, Pune University</span></li>
 <li><span>Based in</span><span>Melbourne, Australia</span></li>
 <li><span>Core stack</span><span>Python, XGBoost, AWS</span></li>
-<li><span>GitHub</span><span>github.com/pushkar-awate</span></li>
+<li><span>GitHub</span><span class="sr-only"> (opens in a new tab)</span><span>github.com/pushkar-awate</span></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="wrap">
+<div class="section-head reveal">
+<div class="kicker">Projects</div>
+<h2 class="section-title">Things I've built</h2>
+<p class="section-sub">Three projects, three different problems: cloud architecture trade-offs, desktop software engineering, and embedded IoT.</p>
+</div>
+
+<div class="proj-grid">
+<div class="case-card reveal">
+<div class="case-top">
+<span class="card-tag">Cloud / Backend</span>
+</div>
+<h3>Music Subscription App</h3>
+<div class="case-grid">
+<div>
+<div class="case-label">Problem</div>
+<div class="case-text">Most tutorials show you one way to deploy an app on AWS. I wanted to actually understand the trade-offs between the options, not just take someone's word for which one is "best."</div>
+</div>
+<div>
+<div class="case-label">Approach</div>
+<div class="case-text">Built one Flask-based music subscription service, then deployed the same application three different ways: on EC2, on ECS Fargate, and as Lambda functions, each backed by DynamoDB and S3, and containerized with Docker where it made sense.</div>
+</div>
+<div>
+<div class="case-label">Outcome</div>
+<div class="case-text">A working, hands-on comparison of cost, latency, and operational overhead across a traditional VM, a managed container service, and a fully serverless approach, instead of a purely theoretical answer.</div>
+</div>
+</div>
+<div class="chip-row">
+<span class="chip">EC2</span>
+<span class="chip">ECS Fargate</span>
+<span class="chip">Lambda</span>
+<span class="chip">DynamoDB</span>
+<span class="chip">S3</span>
+<span class="chip">Docker</span>
+</div>
+<a class="card-link" href="https://github.com/pushkar-awate/music-subscription-app" target="_blank" rel="noopener">View on GitHub ↗<span class="sr-only"> (opens in a new tab)</span></a>
+</div>
+
+<div class="case-card reveal">
+<div class="case-top">
+<span class="card-tag">Desktop / Software Eng.</span>
+</div>
+<h3>Healthcare Management System</h3>
+<div class="case-grid">
+<div>
+<div class="case-label">Problem</div>
+<div class="case-text">A lot of my coursework leaned heavily on ML and cloud work. I wanted a project that forced me to focus purely on solid software engineering fundamentals instead.</div>
+</div>
+<div>
+<div class="case-label">Approach</div>
+<div class="case-text">Built a JavaFX desktop application for managing healthcare records using a proper MVC architecture, with JPA and Hibernate handling persistence rather than hand-rolled SQL, and JUnit tests covering the core logic.</div>
+</div>
+<div>
+<div class="case-label">Outcome</div>
+<div class="case-text">A maintainable, testable desktop application that demonstrates I can write clean, well-structured software outside of an ML or notebook context, not just glue code around a model.</div>
+</div>
+</div>
+<div class="chip-row">
+<span class="chip">JavaFX</span>
+<span class="chip">MVC</span>
+<span class="chip">Hibernate / JPA</span>
+<span class="chip">JUnit</span>
+</div>
+<a class="card-link" href="https://github.com/pushkar-awate/healthcare-javafx-assignment" target="_blank" rel="noopener">View on GitHub ↗<span class="sr-only"> (opens in a new tab)</span></a>
+</div>
+
+<div class="case-card reveal">
+<div class="case-top">
+<span class="card-tag">IoT / Embedded</span>
+</div>
+<h3>Interactive Mirror Using Voice Assistance</h3>
+<div class="case-grid">
+<div>
+<div class="case-label">Problem</div>
+<div class="case-text">Ambient information displays (weather, time, reminders) are usually either expensive commercial products or purely conceptual projects. I wanted to build a genuinely working, affordable version.</div>
+</div>
+<div>
+<div class="case-label">Approach</div>
+<div class="case-text">Built a voice-controlled smart mirror on a Raspberry Pi, combining a two-way mirror panel, a display, and voice assistant integration so information could be pulled up hands-free.</div>
+</div>
+<div>
+<div class="case-label">Outcome</div>
+<div class="case-text">A working prototype that was written up and published academically, which was a good early lesson in documenting a project well enough for someone else to evaluate it.</div>
+</div>
+</div>
+<div class="chip-row">
+<span class="chip">Raspberry Pi</span>
+<span class="chip">Voice Control</span>
+<span class="chip">IoT</span>
+</div>
+<a class="card-link" href="https://www.irjet.net/volume8-issue04" target="_blank" rel="noopener">Published, IRJET Vol. 8, Issue 4, Sr. No. 330 ↗<span class="sr-only"> (opens in a new tab)</span></a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="experience">
+<div class="wrap">
+<div class="section-head reveal">
+<div class="kicker">Experience</div>
+<h2 class="section-title">Where I've worked</h2>
+<p class="section-sub">Two roles, one thread. First keeping infrastructure reliable, now keeping ML pipelines reliable too.</p>
+</div>
+
+<div class="timeline reveal">
+<div class="tl-item">
+<div class="tl-head">
+<div>
+<div class="tl-role">AI/ML Engineering Intern</div>
+<div class="tl-org">Prodegee (via RMIT)</div>
+</div>
+<div class="tl-date">Feb 2026 - Jun 2026</div>
+</div>
+<p class="tl-intro">I joined Prodegee to get hands-on experience with ML the way real teams build it: version-controlled, peer-reviewed, and reproducible, rather than a one-off notebook. The project was a geospatial classification pipeline used to predict outcomes across villages in Mauritania from survey and geospatial data.</p>
+<ul class="tl-list">
+<li>Worked inside an agentic, version-controlled pipeline: every task moved through a GitHub kanban board with a documented kickoff and a peer review before it was considered done, and Kestra handled orchestrating the pipeline steps end to end.</li>
+<li>Built an XGBoost classifier on an 8-country geospatial corpus and ran 100 Optuna trials to tune it, lifting the model's F1 score in the process.</li>
+<li>Benchmarked XGBoost against Random Forest and Logistic Regression across 200 surveyed villages, then tested generalization on 35 additional villages that had no survey data at all.</li>
+<li>Tracked down a feature collapse bug that was quietly wrecking model quality. Fixing it took the key feature-target correlation from -0.714 to +0.600, which is the difference between a model that's actively misleading and one that's usable.</li>
+<li>Built an out-of-distribution flagging system so the model could be trusted to run blind inference on 2,996 villages that had never been surveyed, instead of only the ones with labeled data.</li>
+<li>Validated the final predictions visually in QGIS before handing off production-ready JSON artifacts to two downstream teams (DS2 and DA1) who built on top of the output.</li>
+</ul>
+</div>
+
+<div class="tl-item">
+<div class="tl-head">
+<div>
+<div class="tl-role">Kubernetes Architect</div>
+<div class="tl-org">Atos-Syntel</div>
+</div>
+<div class="tl-date">Sep 2021 - Jun 2023</div>
+</div>
+<p class="tl-intro">My first role out of my Bachelor's, on a 7-person engineering team supporting production Kubernetes infrastructure for a US-based client (under NDA, so I can't name them). This is where I learned to think in terms of uptime, blast radius, and what happens when something breaks and people are depending on it staying up.</p>
+<ul class="tl-list">
+<li>Upgraded production Kubernetes clusters on a regular cycle, planning each upgrade carefully so the cluster stayed current without breaking workloads that were already running.</li>
+<li>Renewed TLS certificates for the clusters on schedule, the kind of unglamorous work that only gets noticed when it's missed.</li>
+<li>Scaled nodes up and down in response to workload demand, balancing cost against having enough headroom for traffic spikes.</li>
+<li>Built working knowledge of the core services that keep a cluster running (Ingress, Pods, kube-scheduler, kube-controller-manager, kube-proxy), which mattered most when something broke and I needed to know where to start looking.</li>
+<li>Troubleshot incidents on critical services like Pods and Ingress, digging through logs and cluster events to find root causes under time pressure.</li>
+<li>Monitored cluster health continuously using Dynatrace, which caught a fair number of problems before they turned into incidents.</li>
+</ul>
+<p class="tl-intro" style="margin-top:14px;">Working inside a 7-person team on one client for nearly two years also taught me the less technical half of the job: staying easy to work with, picking things up quickly when the client's setup didn't match anything I'd seen before, and being someone teammates could hand a problem to without having to double check it afterward.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<div class="wrap">
+<div class="section-head reveal">
+<div class="kicker">Skills</div>
+<h2 class="section-title">Tools I work with</h2>
+<p class="section-sub">A mix that spans infrastructure, applied ML, and the geospatial and pipeline tooling from my internship work.</p>
+</div>
+
+<div class="skill-grid">
+<div class="skill-card reveal">
+<h4>Technical Skill</h4>
+<div class="pill-row">
+<span class="pill">Python</span><span class="pill">Java</span><span class="pill">C++</span>
+<span class="pill">SQL</span><span class="pill">XGBoost</span><span class="pill">TensorFlow</span>
+<span class="pill">Scikit-learn</span>
+</div>
+</div>
+<div class="skill-card reveal">
+<h4>Geospatial &amp; Stats</h4>
+<div class="pill-row">
+<span class="pill">GeoPandas</span><span class="pill">QGIS</span><span class="pill">LOCO CV</span>
+<span class="pill">Hyperparameter Tuning</span><span class="pill">OOD Detection</span>
+</div>
+</div>
+<div class="skill-card reveal">
+<h4>Cloud &amp; MLOps</h4>
+<div class="pill-row">
+<span class="pill">AWS</span><span class="pill">Docker</span><span class="pill">Kubernetes</span>
+<span class="pill">Git</span><span class="pill">CI/CD</span>
+</div>
+</div>
+<div class="skill-card reveal">
+<h4>Pipeline &amp; Tuning</h4>
+<div class="pill-row">
+<span class="pill">Optuna</span><span class="pill">Kestra</span><span class="pill">Pipeline Orchestration</span>
+</div>
+</div>
+<div class="skill-card reveal">
+<h4>AI Tools</h4>
+<div class="pill-row">
+<span class="pill">Claude Code</span><span class="pill">AI Coding Agents</span><span class="pill">Agentic Workflows</span>
+<span class="pill">AI-Agent-Driven Pipelines</span>
 </div>
 </div>
 </div>
@@ -570,202 +777,6 @@ section{padding:64px 0;}
 </div>
 </section>
 
-<section id="experience">
-<div class="wrap">
-<div class="section-head reveal">
-<div class="kicker">Experience</div>
-<h2 class="section-title">Where I've worked</h2>
-<p class="section-sub">Two roles, one thread. First keeping infrastructure reliable, now keeping ML pipelines reliable too.</p>
-</div>
-
-<div class="timeline reveal">
-<div class="tl-item">
-<div class="tl-head">
-<div>
-<div class="tl-role">AI/ML Engineering Intern</div>
-<div class="tl-org">Prodegee (via RMIT)</div>
-</div>
-<div class="tl-date">Feb 2026 - Jun 2026</div>
-</div>
-<p class="tl-intro">I joined Prodegee to get hands-on experience with ML the way real teams build it: version-controlled, peer-reviewed, and reproducible, rather than a one-off notebook. The project was a geospatial classification pipeline used to predict outcomes across villages in Mauritania from survey and geospatial data.</p>
-<ul class="tl-list">
-<li>Worked inside an agentic, version-controlled pipeline: every task moved through a GitHub kanban board with a documented kickoff and a peer review before it was considered done, and Kestra handled orchestrating the pipeline steps end to end.</li>
-<li>Built an XGBoost classifier on an 8-country geospatial corpus and ran 100 Optuna trials to tune it, lifting the model's F1 score in the process.</li>
-<li>Benchmarked XGBoost against Random Forest and Logistic Regression across 200 surveyed villages, then tested generalization on 35 additional villages that had no survey data at all.</li>
-<li>Tracked down a feature collapse bug that was quietly wrecking model quality. Fixing it took the key feature-target correlation from -0.714 to +0.600, which is the difference between a model that's actively misleading and one that's usable.</li>
-<li>Built an out-of-distribution flagging system so the model could be trusted to run blind inference on 2,996 villages that had never been surveyed, instead of only the ones with labeled data.</li>
-<li>Validated the final predictions visually in QGIS before handing off production-ready JSON artifacts to two downstream teams (DS2 and DA1) who built on top of the output.</li>
-</ul>
-</div>
-
-<div class="tl-item">
-<div class="tl-head">
-<div>
-<div class="tl-role">Kubernetes Architect</div>
-<div class="tl-org">Atos-Syntel</div>
-</div>
-<div class="tl-date">Sep 2021 - Jun 2023</div>
-</div>
-<p class="tl-intro">My first role out of my Bachelor's, on a 7-person engineering team supporting production Kubernetes infrastructure for a US-based client (under NDA, so I can't name them). This is where I learned to think in terms of uptime, blast radius, and what happens when something breaks and people are depending on it staying up.</p>
-<ul class="tl-list">
-<li>Upgraded production Kubernetes clusters on a regular cycle, planning each upgrade carefully so the cluster stayed current without breaking workloads that were already running.</li>
-<li>Renewed TLS certificates for the clusters on schedule, the kind of unglamorous work that only gets noticed when it's missed.</li>
-<li>Scaled nodes up and down in response to workload demand, balancing cost against having enough headroom for traffic spikes.</li>
-<li>Built working knowledge of the core services that keep a cluster running (Ingress, Pods, kube-scheduler, kube-controller-manager, kube-proxy), which mattered most when something broke and I needed to know where to start looking.</li>
-<li>Troubleshot incidents on critical services like Pods and Ingress, digging through logs and cluster events to find root causes under time pressure.</li>
-<li>Monitored cluster health continuously using Dynatrace, which caught a fair number of problems before they turned into incidents.</li>
-</ul>
-<p class="tl-intro" style="margin-top:14px;">Working inside a 7-person team on one client for nearly two years also taught me the less technical half of the job: staying easy to work with, picking things up quickly when the client's setup didn't match anything I'd seen before, and being someone teammates could hand a problem to without having to double check it afterward.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section id="projects">
-<div class="wrap">
-<div class="section-head reveal">
-<div class="kicker">Projects</div>
-<h2 class="section-title">Things I've built</h2>
-<p class="section-sub">Three projects, three different problems: cloud architecture trade-offs, desktop software engineering, and embedded IoT.</p>
-</div>
-
-<div class="proj-grid">
-<div class="case-card reveal">
-<div class="case-top">
-<span class="card-tag">Cloud / Backend</span>
-</div>
-<h3>Music Subscription App</h3>
-<div class="case-grid">
-<div>
-<div class="case-label">Problem</div>
-<div class="case-text">Most tutorials show you one way to deploy an app on AWS. I wanted to actually understand the trade-offs between the options, not just take someone's word for which one is "best."</div>
-</div>
-<div>
-<div class="case-label">Approach</div>
-<div class="case-text">Built one Flask-based music subscription service, then deployed the same application three different ways: on EC2, on ECS Fargate, and as Lambda functions, each backed by DynamoDB and S3, and containerized with Docker where it made sense.</div>
-</div>
-<div>
-<div class="case-label">Outcome</div>
-<div class="case-text">A working, hands-on comparison of cost, latency, and operational overhead across a traditional VM, a managed container service, and a fully serverless approach, instead of a purely theoretical answer.</div>
-</div>
-</div>
-<div class="chip-row">
-<span class="chip">EC2</span>
-<span class="chip">ECS Fargate</span>
-<span class="chip">Lambda</span>
-<span class="chip">DynamoDB</span>
-<span class="chip">S3</span>
-<span class="chip">Docker</span>
-</div>
-<a class="card-link" href="https://github.com/pushkar-awate/music-subscription-app" target="_blank" rel="noopener">View on GitHub ↗</a>
-</div>
-
-<div class="case-card reveal">
-<div class="case-top">
-<span class="card-tag">Desktop / Software Eng.</span>
-</div>
-<h3>Healthcare Management System</h3>
-<div class="case-grid">
-<div>
-<div class="case-label">Problem</div>
-<div class="case-text">A lot of my coursework leaned heavily on ML and cloud work. I wanted a project that forced me to focus purely on solid software engineering fundamentals instead.</div>
-</div>
-<div>
-<div class="case-label">Approach</div>
-<div class="case-text">Built a JavaFX desktop application for managing healthcare records using a proper MVC architecture, with JPA and Hibernate handling persistence rather than hand-rolled SQL, and JUnit tests covering the core logic.</div>
-</div>
-<div>
-<div class="case-label">Outcome</div>
-<div class="case-text">A maintainable, testable desktop application that demonstrates I can write clean, well-structured software outside of an ML or notebook context, not just glue code around a model.</div>
-</div>
-</div>
-<div class="chip-row">
-<span class="chip">JavaFX</span>
-<span class="chip">MVC</span>
-<span class="chip">Hibernate / JPA</span>
-<span class="chip">JUnit</span>
-</div>
-<a class="card-link" href="https://github.com/pushkar-awate/healthcare-javafx-assignment" target="_blank" rel="noopener">View on GitHub ↗</a>
-</div>
-
-<div class="case-card reveal">
-<div class="case-top">
-<span class="card-tag">IoT / Embedded</span>
-</div>
-<h3>Interactive Mirror Using Voice Assistance</h3>
-<div class="case-grid">
-<div>
-<div class="case-label">Problem</div>
-<div class="case-text">Ambient information displays (weather, time, reminders) are usually either expensive commercial products or purely conceptual projects. I wanted to build a genuinely working, affordable version.</div>
-</div>
-<div>
-<div class="case-label">Approach</div>
-<div class="case-text">Built a voice-controlled smart mirror on a Raspberry Pi, combining a two-way mirror panel, a display, and voice assistant integration so information could be pulled up hands-free.</div>
-</div>
-<div>
-<div class="case-label">Outcome</div>
-<div class="case-text">A working prototype that was written up and published academically, which was a good early lesson in documenting a project well enough for someone else to evaluate it.</div>
-</div>
-</div>
-<div class="chip-row">
-<span class="chip">Raspberry Pi</span>
-<span class="chip">Voice Control</span>
-<span class="chip">IoT</span>
-</div>
-<a class="card-link" href="https://www.irjet.net/volume8-issue04" target="_blank" rel="noopener">Published, IRJET Vol. 8, Issue 4, Sr. No. 330 ↗</a>
-</div>
-</div>
-</div>
-</section>
-
-<section id="skills">
-<div class="wrap">
-<div class="section-head reveal">
-<div class="kicker">Skills</div>
-<h2 class="section-title">Tools I work with</h2>
-<p class="section-sub">A mix that spans infrastructure, applied ML, and the geospatial and pipeline tooling from my internship work.</p>
-</div>
-
-<div class="skill-grid">
-<div class="skill-card reveal">
-<h4>Technical Skill</h4>
-<div class="pill-row">
-<span class="pill">Python</span><span class="pill">Java</span><span class="pill">C++</span>
-<span class="pill">SQL</span><span class="pill">XGBoost</span><span class="pill">TensorFlow</span>
-<span class="pill">Scikit-learn</span>
-</div>
-</div>
-<div class="skill-card reveal">
-<h4>Geospatial &amp; Stats</h4>
-<div class="pill-row">
-<span class="pill">GeoPandas</span><span class="pill">QGIS</span><span class="pill">LOCO CV</span>
-<span class="pill">Hyperparameter Tuning</span><span class="pill">OOD Detection</span>
-</div>
-</div>
-<div class="skill-card reveal">
-<h4>Cloud &amp; MLOps</h4>
-<div class="pill-row">
-<span class="pill">AWS</span><span class="pill">Docker</span><span class="pill">Kubernetes</span>
-<span class="pill">Git</span><span class="pill">CI/CD</span>
-</div>
-</div>
-<div class="skill-card reveal">
-<h4>Pipeline &amp; Tuning</h4>
-<div class="pill-row">
-<span class="pill">Optuna</span><span class="pill">Kestra</span><span class="pill">Pipeline Orchestration</span>
-</div>
-</div>
-<div class="skill-card reveal">
-<h4>AI Tools</h4>
-<div class="pill-row">
-<span class="pill">Claude Code</span><span class="pill">AI Coding Agents</span><span class="pill">Agentic Workflows</span>
-<span class="pill">AI-Agent-Driven Pipelines</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-
 <section id="contact">
 <div class="wrap">
 <div class="section-head reveal">
@@ -783,11 +794,11 @@ section{padding:64px 0;}
 
 <div class="form-row">
 <label for="c-name">Name</label>
-<input id="c-name" type="text" name="name" required>
+<input id="c-name" type="text" name="name" autocomplete="name" required>
 </div>
 <div class="form-row">
 <label for="c-email">Email address</label>
-<input id="c-email" type="email" name="email" required>
+<input id="c-email" type="email" name="email" autocomplete="email" required>
 </div>
 <div class="form-row">
 <label for="c-subject">Subject</label>
@@ -805,11 +816,11 @@ section{padding:64px 0;}
 <div class="contact-tiles">
 <a class="contact-tile" href="https://www.linkedin.com/in/pushkar-awate/" target="_blank" rel="noopener">
 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/></svg>
-<span>LinkedIn</span>
+<span>LinkedIn</span><span class="sr-only"> (opens in a new tab)</span>
 </a>
 <a class="contact-tile" href="https://github.com/pushkar-awate" target="_blank" rel="noopener">
 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
-<span>GitHub</span>
+<span>GitHub</span><span class="sr-only"> (opens in a new tab)</span>
 </a>
 </div>
 </div>
@@ -817,6 +828,7 @@ section{padding:64px 0;}
 </div>
 </section>
 
+</main>
 <footer>
 2026 Pushkar Awate. Built with plain HTML and CSS, hosted on GitHub Pages.
 </footer>
