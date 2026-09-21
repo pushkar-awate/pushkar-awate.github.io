@@ -528,10 +528,70 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.navlinks a:focus-visibl
 <div class="section-head reveal">
 <div class="kicker">Projects</div>
 <h2 class="section-title">Things I've built</h2>
-<p class="section-sub">Three projects, three different problems: cloud architecture trade-offs, desktop software engineering, and embedded IoT.</p>
+<p class="section-sub">Two live, deployed AI systems built on one reusable agent runtime, plus cloud architecture trade-offs, desktop software engineering, and embedded IoT.</p>
 </div>
 
 <div class="proj-grid">
+<div class="case-card reveal">
+<div class="case-top">
+<span class="card-tag">Agentic AI / LLM</span>
+</div>
+<h3>AI Job-Fit Agent + Live Job Board</h3>
+<div class="case-grid">
+<div>
+<div class="case-label">Problem</div>
+<div class="case-text">Job seekers apply into a black box: an applicant-tracking system keyword-matches a resume before a human ever reads it, and there is no easy way to see how well you actually fit a role.</div>
+</div>
+<div>
+<div class="case-label">Approach</div>
+<div class="case-text">Built an AI agent from scratch on a reusable perceive, reason, guardrail, act, verify, remember runtime with a pluggable deterministic or LLM brain. It scores resume-to-job-description fit, flags missing skills, and drafts tailored bullets, with a guardrail that refuses to invent experience. Then extended it into a live job board that pulls real postings and ranks them by an F1 match score.</div>
+</div>
+<div>
+<div class="case-label">Outcome</div>
+<div class="case-text">A live, deployed tool (Streamlit, GitHub Actions CI) that turns a paste-a-JD script into a working job board with fit scoring and one-click apply, sharing the same runtime as the self-healing pipeline below.</div>
+</div>
+</div>
+<div class="chip-row">
+<span class="chip">Agentic AI</span>
+<span class="chip">LLM</span>
+<span class="chip">Python</span>
+<span class="chip">Streamlit</span>
+<span class="chip">CI/CD</span>
+</div>
+<a class="card-link" href="https://jobfitagent.streamlit.app" target="_blank" rel="noopener">Live demo ↗<span class="sr-only"> (opens in a new tab)</span></a>
+<a class="card-link" href="https://github.com/pushkar-awate/jobfit-agent" target="_blank" rel="noopener">View on GitHub ↗<span class="sr-only"> (opens in a new tab)</span></a>
+</div>
+
+<div class="case-card reveal">
+<div class="case-top">
+<span class="card-tag">MLOps / Reliability</span>
+</div>
+<h3>Self-Healing MLOps Pipeline</h3>
+<div class="case-grid">
+<div>
+<div class="case-label">Problem</div>
+<div class="case-text">Machine-learning models silently get worse as real-world data drifts, and a naive "just retrain" can quietly ship a model that is worse than the one it replaced.</div>
+</div>
+<div>
+<div class="case-label">Approach</div>
+<div class="case-text">Built an autonomous controller that watches a live model, detects data drift and accuracy loss, retrains a candidate, and promotes it only when it beats the current model on held-out data, with rollback and an append-only decision ledger. It runs on the real ELEC2 concept-drift benchmark and shares the same from-scratch agent runtime as the job-fit agent.</div>
+</div>
+<div>
+<div class="case-label">Outcome</div>
+<div class="case-text">A live, deployed pipeline (Streamlit, GitHub Actions CI) that shows the full detect, retrain, promote-or-block loop on real data, including the guardrail refusing bad deploys, which is the hard part of MLOps.</div>
+</div>
+</div>
+<div class="chip-row">
+<span class="chip">MLOps</span>
+<span class="chip">Drift Detection</span>
+<span class="chip">Python</span>
+<span class="chip">Streamlit</span>
+<span class="chip">CI/CD</span>
+</div>
+<a class="card-link" href="https://selfheal-mlops.streamlit.app" target="_blank" rel="noopener">Live demo ↗<span class="sr-only"> (opens in a new tab)</span></a>
+<a class="card-link" href="https://github.com/pushkar-awate/selfheal-mlops" target="_blank" rel="noopener">View on GitHub ↗<span class="sr-only"> (opens in a new tab)</span></a>
+</div>
+
 <div class="case-card reveal">
 <div class="case-top">
 <span class="card-tag">Cloud / Backend</span>
