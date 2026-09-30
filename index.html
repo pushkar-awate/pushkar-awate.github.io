@@ -594,6 +594,37 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.navlinks a:focus-visibl
 
 <div class="case-card reveal">
 <div class="case-top">
+<span class="card-tag">Agent Evaluation / LLMOps</span>
+</div>
+<h3>Agent Eval &amp; Regression Gate</h3>
+<div class="case-grid">
+<div>
+<div class="case-label">Problem</div>
+<div class="case-text">Teams shipping LLM agents change a prompt or a model and cannot tell whether they made the agent better or quietly broke it. Agents are non-deterministic, and "it looked fine" is not a test.</div>
+</div>
+<div>
+<div class="case-label">Approach</div>
+<div class="case-text">Built an eval and regression harness that runs an agent over a set of cases and scores each with pluggable judges: deterministic checks, a grounded-strengths guardrail that rejects invented experience, and an LLM-as-judge for faithfulness and relevance. A good run is stored as a baseline, and every later run is gated against it, so a change that regresses a guarded metric is blocked. It evaluates the real job-fit agent on live job postings, not a toy.</div>
+</div>
+<div>
+<div class="case-label">Outcome</div>
+<div class="case-text">A live, deployed dashboard and a GitHub Actions gate that catch a real regression in a real agent before it ships, built on the same from-scratch runtime as the two projects above, turning the three repositories into one system.</div>
+</div>
+</div>
+<div class="chip-row">
+<span class="chip">LLMOps</span>
+<span class="chip">LLM-as-Judge</span>
+<span class="chip">Evaluation</span>
+<span class="chip">Python</span>
+<span class="chip">Streamlit</span>
+<span class="chip">CI/CD</span>
+</div>
+<a class="card-link" href="https://agenteval-pushkar.streamlit.app" target="_blank" rel="noopener">Live demo ↗<span class="sr-only"> (opens in a new tab)</span></a>
+<a class="card-link" href="https://github.com/pushkar-awate/agenteval" target="_blank" rel="noopener">View on GitHub ↗<span class="sr-only"> (opens in a new tab)</span></a>
+</div>
+
+<div class="case-card reveal">
+<div class="case-top">
 <span class="card-tag">Cloud / Backend</span>
 </div>
 <h3>Music Subscription App</h3>
