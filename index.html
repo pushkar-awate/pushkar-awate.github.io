@@ -478,7 +478,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.navlinks a:focus-visibl
 <div class="lbl">Production infrastructure experience</div>
 </div>
 <div class="stat">
-<div class="num">6</div>
+<div class="num">7</div>
 <div class="lbl">Projects across AI/ML, cloud, and IoT</div>
 </div>
 <div class="stat">
@@ -528,10 +528,41 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.navlinks a:focus-visibl
 <div class="section-head reveal">
 <div class="kicker">Projects</div>
 <h2 class="section-title">Things I've built</h2>
-<p class="section-sub">Three live, deployed AI systems built on one reusable agent runtime, plus cloud architecture trade-offs, desktop software engineering, and embedded IoT.</p>
+<p class="section-sub">Four live, deployed AI systems built on one reusable agent runtime, plus cloud architecture trade-offs, desktop software engineering, and embedded IoT.</p>
 </div>
 
 <div class="proj-grid">
+<div class="case-card reveal">
+<div class="case-top">
+<span class="card-tag">Governed RAG / LLM Safety</span>
+</div>
+<h3>Grounded RAG with Governance</h3>
+<div class="case-grid">
+<div>
+<div class="case-label">Problem</div>
+<div class="case-text">Most RAG systems answer anything, including questions their documents cannot support, which is dangerous in a regulated setting. Controlling who can see a document is only half the problem; the other half is whether the model refuses to answer instead of confidently guessing.</div>
+</div>
+<div>
+<div class="case-label">Approach</div>
+<div class="case-text">Built a retrieval-augmented QA system that cites every claim and abstains when the context does not support an answer. Added access-scoped retrieval so passages above a user's clearance never reach the model, a tamper-evident audit log for every answer-or-abstain decision, and PII redaction. Abstention is measured as precision and recall and gated in CI, on the same from-scratch runtime as the projects below.</div>
+</div>
+<div>
+<div class="case-label">Outcome</div>
+<div class="case-text">A live, deployed system (Streamlit, GitHub Actions CI) where grounding cut confident-wrong answers from 100% to 43% on an adversarial set, with 100% abstention precision and zero clearance leaks across the access tests.</div>
+</div>
+</div>
+<div class="chip-row">
+<span class="chip">RAG</span>
+<span class="chip">LLM Safety</span>
+<span class="chip">Governance</span>
+<span class="chip">Python</span>
+<span class="chip">Streamlit</span>
+<span class="chip">CI/CD</span>
+</div>
+<a class="card-link" href="https://grounded-rag-pushkar.streamlit.app" target="_blank" rel="noopener">Live demo &#8599;<span class="sr-only"> (opens in a new tab)</span></a>
+<a class="card-link" href="https://github.com/pushkar-awate/grounded-rag" target="_blank" rel="noopener">View on GitHub &#8599;<span class="sr-only"> (opens in a new tab)</span></a>
+</div>
+
 <div class="case-card reveal">
 <div class="case-top">
 <span class="card-tag">Agentic AI / LLM</span>
@@ -608,7 +639,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.navlinks a:focus-visibl
 </div>
 <div>
 <div class="case-label">Outcome</div>
-<div class="case-text">A live, deployed dashboard and a GitHub Actions gate that catch a real regression in a real agent before it ships, built on the same from-scratch runtime as the two projects above, turning the three repositories into one system.</div>
+<div class="case-text">A live, deployed dashboard and a GitHub Actions gate that catch a real regression in a real agent before it ships, built on the same from-scratch runtime as the other agent projects here, turning four repositories into one system.</div>
 </div>
 </div>
 <div class="chip-row">
@@ -806,7 +837,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.navlinks a:focus-visibl
 <div class="pill-row">
 <span class="pill">Claude Code</span><span class="pill">AI Coding Agents</span><span class="pill">Agentic Workflows</span>
 <span class="pill">LLMs (Groq / Llama)</span><span class="pill">LLM-as-Judge</span><span class="pill">Agent Evaluation</span>
-<span class="pill">Regression Gating</span><span class="pill">LoRA / PEFT</span>
+<span class="pill">Regression Gating</span><span class="pill">LoRA / PEFT</span><span class="pill">RAG (Retrieval + Reranking)</span>
 </div>
 </div>
 </div>
